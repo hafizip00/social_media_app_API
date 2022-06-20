@@ -4,8 +4,10 @@ const morgan = require('morgan')
 const helmet = require('helmet')
 
 
+
 const authRoute = require('./routes/auth')
 const userRoute = require('./routes/user')
+const postRoute = require('./routes/post')
 
 
 const app = express()
@@ -22,6 +24,7 @@ app.use(helmet())
 
 app.use('/api/users' , userRoute)
 app.use('/api/auth' , authRoute)
+app.use('/api/posts' , postRoute)
 
 
 
