@@ -24,7 +24,6 @@ route.post("/login" , async (req , res)=>{
     !user && res.status(404).send("Account Not Found Please Register First!")
     const validPassword  = await bcrypt.compare(req.body.password , user.password)
     !validPassword && res.status(400).json("Wrong Password!")
-
     res.status(200).json(user)
     } catch (error) {
         console.log(error);
